@@ -13,14 +13,32 @@ import {
     TextField } from '@mui/material'
 import { blue } from '@mui/material/colors'
 import { useState } from 'react';
+import { login } from '../../services/userService'
+import { useNavigate } from 'react-router-dom'
 
-function LoginCard() {
-    const [isPassVisible, setIsPassVisible] = useState(false);
+  function LoginCard({ goToRegister }) {
+  const [isPassVisible, setIsPassVisible] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const navigate = useNavigate()
+
+  async function onLogin() {
+    try {
+      const loginResponse = await login({email, password})
+      localStorage.setItem('token',loginResponse.result)
+      navigate('/dashboard/Home')
+    } catch (error) {
+    }
+  }
+
    return (
      <Card sx={{ maxWidth: "700px", backgroundColor: blue[300] }} raised={true}>
        <CardHeader title="Login"></CardHeader>
        <CardContent>
          <TextField
+           onChange={(e) => setEmail(e.target.value)}
            label="Email"
            type="text"
            variant="outlined"
@@ -42,8 +60,9 @@ function LoginCard() {
                </InputAdornment>
              ),
            }}
-         ></TextField>
+         />,
          <TextField
+           onChange={(e) => setPassword(e.target.value)}
            label="Password"
            type={isPassVisible ? "text" : "password"}
            variant="outlined"
@@ -69,14 +88,22 @@ function LoginCard() {
                </InputAdornment>
              ),
            }}
-         ></TextField>
+         />
+         {errorMessage && (
+          <Typography color="error" textAlign="center" mt={2}>
+            {errorMessage}
+          </Typography>
+        )}
        </CardContent>
        <Divider />
        <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
-         <Button size="small" color="secondary" variant="contained">
-           Register
-         </Button>
-         <Button size="small" color="primary" variant="contained">
+         <Button 
+         size="small" color="secondary" variant="contained" onClick={() => 
+         goToRegister()}>
+         Register
+        </Button>
+         <Button size="small" variant="contained" onClick={() => 
+          onLogin()} color="success">
            Login
          </Button>
        </CardActions>
