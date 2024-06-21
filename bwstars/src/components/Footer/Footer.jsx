@@ -1,4 +1,3 @@
-import React from 'react'
 
 import { Box, Grid, Container, Typography, Button } from '@mui/material'
 
@@ -18,28 +17,29 @@ function Footer() {
     }
   ]
 
-  function generateFooterElements() {
-    const footerElements = elements.map((column) => {
-      return (
-        <Grid item xs={12} md={4}>
-          <Box borderBottom={1}>
-            <Button sx={{ color: 'white', fontWeight: 'bold' }}>
-              {column.header}
-            </Button>
-          </Box>
-          {column.links.map((link) => {
-            return (
-              <Box>
-                <Button sx={{ color: 'white' }}>{link}</Button>
-              </Box>
-            )
-          })}
-        </Grid>
-      )
-    })
-    return footerElements
-  }
+function generateFooterElements() {
+  const footerElements = elements.map((column, columnIndex) => {
+    return (
+      <Grid item xs={12} md={4} key={columnIndex}>
+        <Box borderBottom={1}>
+          <Button sx={{ color: 'white', fontWeight: 'bold' }}>
+            {column.header}
+          </Button>
+        </Box>
+        {column.links.map((link, linkIndex) => {
+          return (
+            <Box key={linkIndex}>
+              <Button sx={{ color: 'white' }}>{link}</Button>
+            </Box>
+          )
+        })}
+      </Grid>
+    )
+  })
+  return footerElements
+}
 
+  
   return (
     <footer>
       <Box bgcolor="primary.main" color="white" padding={2}>
