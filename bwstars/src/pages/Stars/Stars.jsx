@@ -6,14 +6,18 @@ function Stars() {
   const [stars,setStars] = useState([])
   async function displayStars() {
     const result = await getAllStars()
-    setStars(result)
+    setStars(result.result)
+  }
+  const showStars = () => {
+   const result = stars.map (star => <p key={star.id}> {star.name} </p>)
+   return result
   }
   useEffect(() => {
     displayStars()
   },[])
   return (
 
-    <div>{stars.map(star => <p>{star.name}</p>)}</div>
+    <div> {showStars()} </div>
   )
 }
 
