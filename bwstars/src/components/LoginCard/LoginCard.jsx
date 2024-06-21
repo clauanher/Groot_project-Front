@@ -21,6 +21,7 @@ function LoginCard() {
        <CardHeader title="Login"></CardHeader>
        <CardContent>
          <TextField
+           onChange={(e) => setEmail(e.target.value)}
            label="Email"
            type="text"
            variant="outlined"
@@ -42,8 +43,9 @@ function LoginCard() {
                </InputAdornment>
              ),
            }}
-         ></TextField>
+         />,
          <TextField
+           onChange={(e) => setPassword(e.target.value)}
            label="Password"
            type={isPassVisible ? "text" : "password"}
            variant="outlined"
@@ -69,7 +71,12 @@ function LoginCard() {
                </InputAdornment>
              ),
            }}
-         ></TextField>
+         />
+         {errorMessage && (
+          <Typography color="error" textAlign="center" mt={2}>
+            {errorMessage}
+          </Typography>
+        )}
        </CardContent>
        <Divider />
        <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
