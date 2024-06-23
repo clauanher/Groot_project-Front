@@ -1,11 +1,17 @@
-import api from '.' 
+import api from "./index"
 
-export async function login(loginData) {
-  const {data} = await api.post('/auth/login', loginData)
-  return data
-}
+const getUser = async (userId) => {
+    try {
+        const{data} = await api.get("/user/profile",{
+            headers:{authorization: localStorage.getItem('token')}
+        })
+        return data
+    } catch (error) {
+        console.error(error)
+        throw error
+    }
+};
 
-export async function signup(signupData) {
-  const response = await api.post('/auth/signup', signupData)
-  return response.data
-}
+export default {
+    getUser
+};

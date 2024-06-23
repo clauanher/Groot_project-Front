@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Box, Grid, Container, Typography, Button } from '@mui/material'
 
 function Footer() {

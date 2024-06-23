@@ -13,7 +13,7 @@ import {
     TextField } from '@mui/material'
 import { blue } from '@mui/material/colors'
 import { useState } from 'react';
-import { login } from '../../services/userService'
+import { login } from '../../services/authService'
 import { useNavigate } from 'react-router-dom'
 
   function LoginCard({ goToRegister }) {
@@ -46,14 +46,14 @@ import { useNavigate } from 'react-router-dom'
            fullWidth={true}
            InputProps={{
              startAdornment: (
-               <InputAdornment>
+               <InputAdornment position="start">
                  <Icon>
                    <Lock />
                  </Icon>
                </InputAdornment>
              ),
              endAdornment: (
-               <InputAdornment>
+               <InputAdornment position="start">
                  <IconButton>
                    <VisibilityOff />
                  </IconButton>
@@ -70,14 +70,14 @@ import { useNavigate } from 'react-router-dom'
            fullWidth={true}
            InputProps={{
              startAdornment: (
-               <InputAdornment>
+               <InputAdornment position="start">
                  <Icon>
                    <Lock />
                  </Icon>
                </InputAdornment>
              ),
              endAdornment: (
-               <InputAdornment>
+               <InputAdornment position="start">
                  <IconButton
                    onClick={() => {
                      setIsPassVisible((oldState) => !oldState);
