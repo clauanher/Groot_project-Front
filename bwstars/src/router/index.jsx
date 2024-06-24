@@ -6,7 +6,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Profile from "../pages/Profile/Profile";
 import Stars from "../pages/Stars/Stars"
 import Constellation from "../pages/Constellations/Constellations"
-import LoginCard from "../components/LoginCard/LoginCard";
+import LoginCard from "../pages/Login/Login";
 
 const router = createBrowserRouter([
   {
