@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { AppBar, Button } from '@mui/material'
 
-const options= [ "Home", "Profile", "Stars", "Constellations" ]
+const options = ["Home", "Profile", "Stars", "Constellations"];
 
 function Header() {
   const location = useLocation()
