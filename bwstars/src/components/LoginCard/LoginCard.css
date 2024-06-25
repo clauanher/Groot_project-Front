@@ -1,0 +1,157 @@
+/* LoginCard.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0d0d0d;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0d0d0d;
+}
+
+.login-card {
+    max-width: 600px;
+    padding: 40px;
+    background-image: url('../../assets/images/imagen galaxia.jpg');
+    /* Fondo de la imagen de la galaxia */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInDown 0.5s ease-out;
+    text-align: center;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transform: scale(1.20);
+        /* Aumenta el tamaño al pasar el ratón por encima */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        /* Añade una sombra blanca */
+}
+
+
+.card-header {
+    text-align: center;
+    font-size: 36px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.input-field {
+    margin-bottom: 30px;
+    position: relative;
+    color: #fff;
+    /* Color de texto blanco */
+    background-color: transparent;
+    /* Fondo transparente */
+    border: none;
+    /* Sin borde */
+    font-size: 28px;
+    padding: 15px;
+    text-align: center;
+    /* Alineación del texto */
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+}
+
+.login-card:hover .input-field {
+    opacity: 1;
+    /* Mostrar cuando se hace hover sobre login-card */
+}
+
+.input-field input[type="text"],
+.input-field input[type="password"] {
+    padding: 15px;
+    font-size: 28px;
+    color: #fff;
+    /* Color de texto blanco */
+    background-color: transparent;
+    /* Fondo transparente */
+    border: none;
+    /* Sin borde */
+    width: calc(100% - 30px);
+    /* Ajuste para el icono de visualización */
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-5px);
+    outline: none;
+}
+
+
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card-actions button {
+    font-size: 24px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+    font-family: 'Orbitron', sans-serif;
+    background-color: transparent;
+    color: #e91013;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: vibrate 0.3s linear infinite;
+    transform: translateY(2px);
+}
+
+
+
+
+
+
+
+@keyframes vibrate {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+}
