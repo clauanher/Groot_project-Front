@@ -1,4 +1,5 @@
-import myImage from "../../assets/logo.png" // Reemplaza esta ruta con la ruta de tu imagen
+import { Link } from 'react-router-dom'; 
+import Carousel from "../../components/Carrousel/Carousel";
 
 
 const Home = () => {
@@ -9,39 +10,66 @@ const Home = () => {
             justifyContent: 'space-between',
             padding: '20px',
         },
-        leftPanel: {
+         leftPanel: {
             flex: 1,
-            backgroundColor: '#f0f0f0',
-            padding: '20px',
-            marginRight: '10px',
-            borderRadius: '8px',
-        },
-        rightPanel: {
-            flex: 2,
             backgroundColor: '#e0e0e0',
             padding: '20px',
-            marginLeft: '10px',
+            marginRight: '10px',
             borderRadius: '8px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
         },
+        rightPanel: {
+            flex: 2,
+            backgroundColor: '#f0f0f0',
+            padding: '20px',
+            marginLeft: '10px',
+            borderRadius: '8px',
+        },
         image: {
             maxWidth: '100%',
             height: 'auto',
             borderRadius: '8px',
-        }
+        },
+        sectionsContainer: {
+            display: 'flex',
+            justifyContent: 'space-around',
+            marginTop: '20px',
+            width: '100%',
+        },
+        card: {
+            flex: 1,
+            backgroundColor: '#ffffff',
+            padding: '20px',
+            margin: '10px',
+            borderRadius: '8px',
+            textAlign: 'center',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            textDecoration: 'none', 
+            color: 'inherit',
+        },
     };
 
-    return (
-        <div style={styles.homeContainer}>
-            <div style={styles.rightPanelPanel}>
-              
-               <img src={myImage} alt="Mi Imagen" style={styles.image} />
-             
-            </div>
-            <div style={styles.leftPanel}>
+return (
+        <div>
+            <div style={styles.homeContainer}>
+                <div style={styles.leftPanel}>
+                    <Carousel/>
+                </div>
+                <div style={styles.rightPanel}>
                     <p>Introducción</p>
+                </div>
+            </div>
+            <div style={styles.sectionsContainer}>
+                <Link to="/seccion-cereales" style={styles.card}>
+                    <h3>Sección cereales</h3>
+                    <p>Explora nuestra variedad de cereales.</p>
+                </Link>
+                <Link to="/crea-tu-bowl" style={styles.card}>
+                    <h3>Crea tu bowl</h3>
+                    <p>Personaliza tu propio bowl de cereales.</p>
+                </Link>
             </div>
         </div>
     );
