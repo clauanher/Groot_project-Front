@@ -10,10 +10,11 @@ import {
     Icon, 
     IconButton, 
     InputAdornment, 
-    TextField } from '@mui/material'
+    TextField, 
+    Typography} from '@mui/material'
 import { blue } from '@mui/material/colors'
 import { useState } from 'react';
-import { login } from '../../services/authService'
+import { login, signup } from '../../services/authService'
 import { useNavigate } from 'react-router-dom'
 
   function LoginCard({ goToRegister }) {
@@ -33,9 +34,18 @@ import { useNavigate } from 'react-router-dom'
     }
   }
 
+   async function onSignup() {
+        try {
+            await signup({ email, password });
+            navigate('/dashboard/Home'); // 
+        } catch (error) {
+            setErrorMessage('Registration failed. Please try again.'); 
+        }
+    }
+
    return (
      <Card sx={{ maxWidth: "700px", backgroundColor: blue[300] }} raised={true}>
-       <CardHeader title="Login"></CardHeader>
+       <CardHeader title="Login/SignUp"></CardHeader>
        <CardContent>
          <TextField
            onChange={(e) => setEmail(e.target.value)}
@@ -54,9 +64,6 @@ import { useNavigate } from 'react-router-dom'
              ),
              endAdornment: (
                <InputAdornment position="start">
-                 <IconButton>
-                   <VisibilityOff />
-                 </IconButton>
                </InputAdornment>
              ),
            }}
@@ -99,7 +106,7 @@ import { useNavigate } from 'react-router-dom'
        <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
          <Button 
          size="small" color="secondary" variant="contained" onClick={() => 
-         goToRegister()}>
+         onSignup()}>
          Register
         </Button>
          <Button size="small" variant="contained" onClick={() => 

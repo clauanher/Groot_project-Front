@@ -5,7 +5,7 @@ const getUser = async (userId) => {
         const{data} = await api.get("/user/profile",{
             headers:{authorization: localStorage.getItem('token')}
         })
-        return data
+        return data.result
     } catch (error) {
         console.error(error)
         throw error

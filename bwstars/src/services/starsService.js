@@ -28,5 +28,5 @@ export const addLike = async(starId) => {
 
 export default {
     getAllStars,
-    addLike
+    addLike,
 };
