@@ -62,11 +62,11 @@ return (
                 </div>
             </div>
             <div style={styles.sectionsContainer}>
-                <Link to="/seccion-cereales" style={styles.card}>
+                <Link to="/dashboard/Stars" style={styles.card}>
                     <h3>Sección cereales</h3>
                     <p>Explora nuestra variedad de cereales.</p>
                 </Link>
-                <Link to="/crea-tu-bowl" style={styles.card}>
+                <Link to="/dashboard/Constellation" style={styles.card}>
                     <h3>Crea tu bowl</h3>
                     <p>Personaliza tu propio bowl de cereales.</p>
                 </Link>

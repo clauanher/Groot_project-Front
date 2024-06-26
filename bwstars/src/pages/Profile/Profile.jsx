@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import userService from '../../services/userService'; 
-import starsService from '../../services/starsService';
 
 const UserView = ({ userId }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [favoriteStar, setFavoriteStar] = useState(null);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -23,23 +21,6 @@ const UserView = ({ userId }) => {
         fetchUser();
     }, [userId]);
 
-      useEffect(() => {
-        const fetchFavoriteStar = async () => {
-            try {
-                // Suponiendo que tienes una función en starService para obtener la estrella favorita del usuario
-                const starData = await starService.addLike(userId);
-                setFavoriteStar(starData);
-            } catch (error) {
-                console.error('Error fetching favorite star:', error);
-                // Manejar el error según sea necesario
-            }
-        };
-
-        if (user) {
-            fetchFavoriteStar();
-        }
-    }, [userId, user]); // Dependencias: userId y user, para asegurar que se actualice cuando cambien
-
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -51,37 +32,37 @@ const UserView = ({ userId }) => {
     return (
         <div>
             <div style={styles.userContainer}>
-                {user ? (
+                {user && (
                     <div>
                         <h1 style={styles.header}>Perfil de Usuario</h1>
-                        <p style={styles.text}>Nombre: {user.result.username}</p>
-                        <p style={styles.text}>Email: {user.result.email}</p>
-                        <p style={styles.text}>Tipo de suscripción: {user.result.suscriptiontype}</p>
+                        <p style={styles.text}>Nombre: {user.username}</p>
+                        <p style={styles.text}>Email: {user.email}</p>
+                        <p style={styles.text}>Tipo de suscripción: {user.subscriptiontype}</p>
                     </div>
-                ) : (
-                    <div>No se encontraron datos de usuario</div>
                 )}
             </div>
 
             <div style={styles.section}>
                 <h2 style={styles.sectionHeader}>Favoritas</h2>
-                <div style={styles.card}>Favorita 1</div>
-                <div style={styles.card}>Favorita 2</div>
-                <div style={styles.card}>Favorita 3</div>
+                {user.stars && user.stars.map((star, index) => (
+                    <div key={index} style={styles.card}>
+                        {star.name}
+                        <p>Tipo: {star.type}</p>
+                    </div>
+                ))}
             </div>
 
             <div style={styles.section}>
                 <h2 style={styles.sectionHeader}>Mis estrellas adoptadas</h2>
-                {/* Aquí puedes agregar cards o elementos para mostrar las estrellas adoptadas */}
-                <div style={styles.card}>Estrella 1</div>
-                <div style={styles.card}>Estrella 2</div>
-                <div style={styles.card}>Estrella 3</div>
+                {user.stars && user.stars.map((star, index) => (
+                    <div key={index} style={styles.card}>
+                        {star.name}
+                    </div>
+                ))}
             </div>
 
-            {/* Sección de Mis constelaciones */}
             <div style={styles.section}>
                 <h2 style={styles.sectionHeader}>Mis constelaciones</h2>
-                {/* Aquí puedes agregar cards o elementos para mostrar las constelaciones */}
                 <div style={styles.card}>Constelación 1</div>
                 <div style={styles.card}>Constelación 2</div>
                 <div style={styles.card}>Constelación 3</div>
