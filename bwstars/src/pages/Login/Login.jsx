@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import LoginCard from '../../components/LoginCard/LoginCard';
-import { login, signup } from '../../services/authService';
-import dinamicImage from "../../assets/dinamic.jpg" 
-import circularImage from "../../assets/circular.jpg"
-
+import { useState } from "react";
+import LoginCard from "../../components/LoginCard/LoginCard";
+import dinamicImage from "../../assets/astro1.jpg";
+import circularImage from "../../assets/constelaciones/color.png";
 
 function Login() {
-  const [mostrarContenido, setMostrarContenido] = useState(false); 
+  const [mostrarContenido, setMostrarContenido] = useState(false);
 
   const styles = {
     container: {
@@ -15,7 +13,7 @@ function Login() {
       alignItems: 'center',
       justifyContent: 'center',
       height: '100vh',
-      backgroundColor: '#f0f0f0',
+      backgroundColor: 'black',
     },
     imageContainer: {
       position: 'relative',
@@ -23,65 +21,63 @@ function Login() {
       alignItems: 'center',
       justifyContent: 'center',
       width: '100%',
-      height: '70vh',
-      backgroundColor: '#ccc',
+      height: '100vh',
+      backgroundColor: 'black',
       cursor: 'pointer',
       overflow: 'hidden',
       transition: 'transform 0.5s ease',
     },
-      revealedContent: {
-      position: 'absolute',
+    revealedContent: {
+      position: 'relative',
       top: 0,
       left: 0,
-      width: '100%',
-      height: '100%',
+      width: '80%',
+      height: '80%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
+      backgroundColor: 'black',
       zIndex: 10,
       textAlign: 'center',
       padding: '20px',
     },
-
     image: {
-      width: '300px',
+      width: '900px',
       height: 'auto',
       borderRadius: '10px',
     },
-
     circularImage: {
-      width: '200px',
-      height: '200px',
+      width: '450px',
+      height: '450px',
       borderRadius: '50%',
-      marginBottom: '20px',
+      marginBottom: '10px',
     },
-
     loginCardContainer: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '200%',
+      width: '90%',
     },
   };
 
-   const handleClickImage = () => {
+  const handleClickImage = () => {
     setMostrarContenido(true);
   };
 
-  
   return (
     <div style={styles.container}>
       <div style={styles.imageContainer} onClick={handleClickImage}>
         {!mostrarContenido && (
-             <img src={dinamicImage} alt="Imagen Dinamica" style={styles.image} />
+          <img src={dinamicImage} alt="Imagen Dinámica" style={styles.image} />
         )}
         {mostrarContenido && (
-        <div style={styles.revealedContent}>
-        <img src={circularImage} alt="Imagen Circular" style={styles.image} /><div className="cajita-login-signup">
-            <LoginCard/>
-          </div></div>
+          <div style={styles.revealedContent}>
+            <img src={circularImage} alt="Imagen Circular" style={styles.circularImage} />
+            <div style={styles.loginCardContainer}>
+              <LoginCard />
+            </div>
+          </div>
         )}
       </div>
     </div>
