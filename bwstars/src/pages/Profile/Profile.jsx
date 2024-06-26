@@ -28,7 +28,7 @@ const UserView = ({ userId }) => {
     if (error) {
         return <div>Error: {error}</div>;
     }
-console.log(user.stars.name)
+
     return (
         <div>
             <div style={styles.userContainer}>
@@ -44,25 +44,30 @@ console.log(user.stars.name)
 
             <div style={styles.section}>
                 <h2 style={styles.sectionHeader}>Favoritas</h2>
-                            <p>{}</p>
-                        </div>
-
-            
-                    <div>
-                        <h2 style={styles.sectionHeader}>Mis estrellas adoptadas</h2>
-                        <div style={styles.card}>Estrella 1</div>
-                        <div style={styles.card}>Estrella 2</div>
-                        <div style={styles.card}>Estrella 3</div>
+                {user.stars && user.stars.map((star, index) => (
+                    <div key={index} style={styles.card}>
+                        {star.name}
+                        <p>Tipo: {star.type}</p>
                     </div>
-                
-                <div>
-                    <h2 style={styles.sectionHeader}>Mis constelaciones</h2>
-                    <div style={styles.card}>Constelación 1</div>
-                    <div style={styles.card}>Constelación 2</div>
-                    <div style={styles.card}>Constelación 3</div>
-                </div>
+                ))}
             </div>
 
+            <div style={styles.section}>
+                <h2 style={styles.sectionHeader}>Mis estrellas adoptadas</h2>
+                {user.stars && user.stars.map((star, index) => (
+                    <div key={index} style={styles.card}>
+                        {star.name}
+                    </div>
+                ))}
+            </div>
+
+            <div style={styles.section}>
+                <h2 style={styles.sectionHeader}>Mis constelaciones</h2>
+                <div style={styles.card}>Constelación 1</div>
+                <div style={styles.card}>Constelación 2</div>
+                <div style={styles.card}>Constelación 3</div>
+            </div>
+        </div>
     );
 };
 

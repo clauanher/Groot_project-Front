@@ -1,5 +1,6 @@
+
 import { useEffect, useState } from 'react'
-import { getAllStars } from '../../services/starsService'
+import { getAllStars, adoptStar, addLike } from "../../services/starsService";
 
 function Stars() {
   const [stars, setStars] = useState([])
@@ -10,16 +11,65 @@ function Stars() {
     setStars(result.result)
   }
 
+  const handleAdopt = async (id) => {
+    try {
+      const response = await adoptStar(id);
+      if (response.success) {
+        setStars(
+          stars.map((star) =>
+            star.id === id ? { ...star, adopted: true } : star
+          )
+        );
+      } else {
+              console.error("Error al adoptar la estrella:", response.message);
+
+      }
+    } catch (error) {
+      console.error("Error al adoptar la estrella:", error);
+    }
+  };
+
+const handleLike = async (id) => {
+  try {
+    const response = await addLike(id);
+    if (response.success) {
+      setStars(
+        stars.map((star) =>
+          star.id === id ? { ...star, likes: star.likes + 1 } : star
+        )
+      );
+    } else {
+      console.error("Error al dar like a la estrella:", response.message);
+    }
+  } catch (error) {
+    console.error("Error al dar like a la estrella:", error);
+  }
+};
   const showStars = () => {
-    return stars.map(star => (
-      <div key={star.id} style={styles.starCard} onClick={() => setSelectedStar(star)}>
+    return stars.map((star) => (
+      <div
+        key={star.id}
+        style={styles.starCard}
+        onClick={() => setSelectedStar(star)}
+      >
         <h3 style={styles.starName}>{star.name}</h3>
         <img src={star.imageUrl} alt={star.name} style={styles.starImage} />
+        <button onClick={() => handleAdopt(star.id)} disabled={star.adopted}>
+          {star.adopted ? "Adoptada" : "Adoptar"}
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleLike(star.id);
+          }}
+        >
+          👍 {star.likes}
+        </button>
       </div>
-    ))
-  }
+    ));
+  };
 
-  useEffect(() => {
+    useEffect(() => {
     displayStars()
   }, [])
 
