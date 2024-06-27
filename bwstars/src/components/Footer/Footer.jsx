@@ -50,7 +50,7 @@ function generateFooterElements() {
         </Container>
       </Box>
       <Box textAlign={'center'} py={2} m={0} bgcolor="black" color={'white'}>
-        <Typography>© Groot project - All Rights Reserved</Typography>
+        <Typography>© Reboot Academy 2022 - All Rights Reserved</Typography>
       </Box>
     </footer>
   )
