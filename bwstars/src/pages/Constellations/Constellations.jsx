@@ -80,6 +80,7 @@ function Constellations() {
 
         .create-card {
           background-color: #add8e6;
+          color: rgb(9, 12, 91)
         }
 
         .form-container {
@@ -88,15 +89,18 @@ function Constellations() {
           padding: 20px;
           border-radius: 5px;
           background-color: #f9f9f9;
+      
         }
 
         form {
           display: flex;
           flex-direction: column;
+        
         }
 
         label {
           margin-bottom: 10px;
+  
         }
 
         input, textarea {
@@ -104,6 +108,7 @@ function Constellations() {
           margin-top: 5px;
           border: 1px solid #ccc;
           border-radius: 5px;
+       
         }
 
         button {
@@ -115,16 +120,19 @@ function Constellations() {
           border-radius: 5px;
           cursor: pointer;
           transition: background-color 0.3s;
+          
         }
 
         button:hover {
           background-color: #45a049;
+          color: rgb(9, 12, 91)
         }
 
         .constellations-list {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          color: rgb(9, 12, 91)
         }
 
         .info-container {
@@ -133,15 +141,18 @@ function Constellations() {
           border: 1px solid #ccc;
           border-radius: 5px;
           background-color: #f9f9f9;
+         
         }
 
         .info-container button {
           margin-top: 10px;
           background-color: #ff6347;
+       
         }
 
         .info-container button:hover {
           background-color: #ff4500;
+      
         }
       `}</style>
     </div>
