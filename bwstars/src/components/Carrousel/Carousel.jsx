@@ -27,24 +27,26 @@ function Carousel() {
 
   const slides = [
     {
-      label: "Pulses from the Sun – NASA ID: PIA17669",
+      label: "PROCYON – NASA ID: PIA17669",
       imgPath:
-        "https://images-assets.nasa.gov/image/PIA17669/PIA17669~small.jpg",
+        "../src/assets/estrellas/lila.png",
     },
     {
-      label: "Bird",
+      label: "CANOPUS",
       imgPath:
-        "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
+        "../src/assets/estrellas/rosa.png",
+
     },
     {
-      label: "Bali, Indonesia",
+      label: "ARCTURUS",
       imgPath:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
+        "../src/assets/estrellas/verde.png",
+
     },
     {
-      label: "Goč, Serbia",
+      label: "CONSTELACIÓN",
       imgPath:
-        "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+        "../src/assets/constelaciones/color.png",
     },
   ];
 
@@ -63,11 +65,9 @@ function Carousel() {
             </div>
           ))}
         </Slider>
-        <button onClick={play}>Play</button>
-        <button onClick={pause}>Pause</button>
           <div className="text-content">
-            <h2>Texto a la derecha del carrusel</h2>
-            <p>Aquí puedes escribir el texto que desees.</p>
+            <h1>ÑAM ÑAM ÑAM</h1>
+           
           </div>
         </div>
     </div>
