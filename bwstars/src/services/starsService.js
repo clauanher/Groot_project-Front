@@ -14,7 +14,7 @@ export const getAllStars = async() => {
 
 export const addLike = async(starId) => {
     try {
-        const response = await api.get(`/stars/${starId}/like`, {
+        const response = await api.put(`/star/${starId}/like`, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }

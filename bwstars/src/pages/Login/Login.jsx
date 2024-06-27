@@ -46,6 +46,7 @@ function Login() {
       width: '900px',
       height: 'auto',
       borderRadius: '10px',
+      
     },
     circularImage: {
       width: '450px',
@@ -53,12 +54,15 @@ function Login() {
       borderRadius: '50%',
       marginBottom: '10px',
     },
-    loginCardContainer: {
+    LoginCard: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '90%',
+      width: '40%',
     },
+    
+    
+
   };
 
   const handleClickImage = () => {

@@ -51,6 +51,7 @@ function Constellations() {
       <style jsx>{`
         .constellations-container {
           padding: 20px;
+          height: 100%;
           font-family: Arial Black, sans-serif;
           color: rgb(215, 240, 103);
            background-color: rgb(9, 12, 91)
