@@ -6,16 +6,24 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgb(215, 240, 103);
 }
 
 .carousel-container {
     flex: 1;
     max-width: 600px;
+    color: rgb(4, 16, 144)
+    
 }
 
 .text-content {
     flex: 1;
+    color: rgb(242, 0, 177);
+    font-size: 35PX;
+    text-align: center;
+    font-family: ArialBlack, sans-serif
 }
+    
 
 .slick-slide img {
     width: 100%;

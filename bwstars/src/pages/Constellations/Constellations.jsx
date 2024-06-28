@@ -51,7 +51,10 @@ function Constellations() {
       <style jsx>{`
         .constellations-container {
           padding: 20px;
-          font-family: Arial, sans-serif;
+          font-family: Arial Black, sans-serif;
+          color: rgb(215, 240, 103);
+           background-color: rgb(9, 12, 91)
+         
         }
 
         h1 {
@@ -68,6 +71,7 @@ function Constellations() {
           text-align: center;
           cursor: pointer;
           transition: background-color 0.3s;
+        
         }
 
         .card:hover {
