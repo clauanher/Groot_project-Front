@@ -27,20 +27,26 @@ function Carousel() {
 
   const slides = [
     {
-      label: "PROCYON – NASA ID: PIA17669",
+      label: "STAR",
+      imgPath:
+        "../src/assets/estrellas/amarillo.jpg",
+
+    },
+    {
+      label: "STAR WALK",
+      imgPath:
+        "../src/assets/estrellas/camino.jpg",
+    },
+   
+    {
+      label: "PROCYON",
       imgPath:
         "../src/assets/estrellas/lila.png",
     },
     {
-      label: "CANOPUS",
+      label: "STAR",
       imgPath:
-        "../src/assets/estrellas/rosa.png",
-
-    },
-    {
-      label: "ARCTURUS",
-      imgPath:
-        "../src/assets/estrellas/verde.png",
+        "../src/assets/estrellas/estrella.jpg",
 
     },
     {

@@ -18,10 +18,14 @@ function Header() {
           <Button sx={{
             color: 'rgb(130, 133, 234)',
           fontSize: '15px',
-            fontFamily: 'Arial Black, sans-serif',
+            fontFamily: 'Arial Black, sans-serif', 
+            '&.Mui-disabled': {
+              color: 'rgb(215, 240, 103)', // Cambia este valor al color que desees para el botón deshabilitado
+            },
             
-        }} disabled={location.pathname.includes(option)}>
+          }} disabled={location.pathname.includes(option)}>
         {option}
+            
         </Button>
         </Link>
         }

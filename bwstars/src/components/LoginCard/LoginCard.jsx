@@ -44,7 +44,8 @@ import { useNavigate } from 'react-router-dom'
     }
 
    return (
-     <Card sx={{ maxWidth: "700px", backgroundColor: blue[300] }} raised={true}>
+     <Card sx={{
+       maxWidth: "600px", backgroundColor: "rgb(9, 12, 91)", color: "white", fontFamily: "Arial Black, sans-serif"}} raised={true}>
        <CardHeader title="Login/SignUp"></CardHeader>
        <CardContent>
          <TextField
@@ -53,8 +54,13 @@ import { useNavigate } from 'react-router-dom'
            type="text"
            variant="outlined"
            margin="dense"
+
            fullWidth={true}
+           InputLabelProps={{
+             style: { color: 'white', fontFamily: 'Arial Black, sans-serif' },
+           }}
            InputProps={{
+             style: { color: 'white', fontFamily: 'Arial Black, sans-serif' },
              startAdornment: (
                <InputAdornment position="start">
                  <Icon>
@@ -75,7 +81,11 @@ import { useNavigate } from 'react-router-dom'
            variant="outlined"
            margin="dense"
            fullWidth={true}
+           InputLabelProps={{
+             style: { color: 'white', fontFamily: 'Arial Black, sans-serif' },
+           }}
            InputProps={{
+             style: { color: 'white', fontFamily: 'Arial Black, sans-serif' },
              startAdornment: (
                <InputAdornment position="start">
                  <Icon>
@@ -103,7 +113,7 @@ import { useNavigate } from 'react-router-dom'
         )}
        </CardContent>
        <Divider />
-       <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
+       <CardActions sx={{ display: "flex", justifyContent: "flex-end", color: "white" }}>
          <Button 
          size="small" color="secondary" variant="contained" onClick={() => 
          onSignup()}>

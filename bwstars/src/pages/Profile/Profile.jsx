@@ -37,7 +37,7 @@ const UserView = ({ userId }) => {
                         <h1 style={styles.header}>PERFIL DE USUARIO</h1>
                         <p style={styles.text}>NOMBRE: {user.username}</p>
                         <p style={styles.text}>EMAIL: {user.email}</p>
-                        <p style={styles.text}>TIPO DE SUSCRIPCIÓN: {user.subscriptiontype}</p>
+                        <p style={styles.text}>TIPO DE SUSCRIPCIÓN: {user.suscriptiontype}</p>
                     </div>
                 )}
             </div>
