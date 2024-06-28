@@ -65,7 +65,7 @@ return (
                     <Carousel/>
                 </div>
                 <div style={styles.rightPanel}>
-                <h1>En DESAYUNANDO CON LAS ESTRELLAS,</h1>
+                <h1>En BREAKFAST WITH STARS,</h1>
                 <p>creemos que cada estrella cuenta una historia y cada constelación es una obra de creatividad. Nuestra misión es inspirar y divertir a través de un juego único donde puedes formar constelaciones con cajas de cereales.</p>
                 <p>¿Te gustaría unirte a una comunidad de entusiastas que comparten esta pasión? ¡Estás en el lugar indicado!</p>
                 <h2>¿Cómo funciona?</h2>
