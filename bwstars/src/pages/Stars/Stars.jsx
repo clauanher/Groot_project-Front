@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { getAllStars, adoptStar, addLike } from "../../services/starsService";
 
 const imageUrls = [
-  { image: '../src/assets/estrellas/lila.png', 
+  { image: '/lila.png', 
     description: 'Procyon, la estrella más brillante de Canis Minor, es una binaria a 11.5 años luz con una estrella blanco-amarilla de secuencia principal y una enana blanca.' }, 
-  { image: '../src/assets/estrellas/naranja.png', 
+  { image: '/naranja.png', 
     description: 'Sirio, la estrella más brillante del cielo nocturno, es una binaria en Canis Major a 8.6 años luz, compuesta por una estrella blanca de secuencia principal y una enana blanca.' }, 
-  { image: '../src/assets/estrellas/rosa.png', 
+  { image: '/rosa.png', 
     description: 'Canopus, la segunda estrella más brillante del cielo, es una supergigante blanca en Carina a 310 años luz con un diámetro 71 veces mayor que el del Sol y una luminosidad 10,000 veces superior.' },
-  { image: '../src/assets/estrellas/verde.png',
+  { image: '/verde.png',
     description: 'Arcturus, la estrella más brillante de Bootes, es una gigante roja a 37 años luz de la Tierra con un diámetro 25 veces mayor que el del Sol y un brillo 170 veces superior.' }
   ];
 

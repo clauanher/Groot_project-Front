@@ -1,7 +1,7 @@
 import { useState } from "react";
 import LoginCard from "../../components/LoginCard/LoginCard";
-import dinamicImage from "../../assets/astro1.jpg";
-import circularImage from "../../assets/constelaciones/color.png";
+import dinamicImage from "/astro1.jpg";
+import circularImage from "/color.png";
 
 function Login() {
   const [mostrarContenido, setMostrarContenido] = useState(false);
@@ -60,8 +60,6 @@ function Login() {
       justifyContent: 'center',
       width: '40%',
     },
-    
-    
 
   };
 

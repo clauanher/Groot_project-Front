@@ -10,7 +10,7 @@ function Header() {
     <AppBar  position = 'sticky' 
     sx={{display:"flex",
        flexDirection:"row",
-        backgroundColor: 'rgb(9, 12, 91)',// Cambia el color de fondo del AppBar
+        backgroundColor: 'rgb(9, 12, 91)',
         
     }}>
         {options.map((option, idx)=> {
@@ -20,7 +20,7 @@ function Header() {
           fontSize: '15px',
             fontFamily: 'Arial Black, sans-serif', 
             '&.Mui-disabled': {
-              color: 'rgb(215, 240, 103)', // Cambia este valor al color que desees para el botón deshabilitado
+              color: 'rgb(215, 240, 103)', 
             },
             
           }} disabled={location.pathname.includes(option)}>

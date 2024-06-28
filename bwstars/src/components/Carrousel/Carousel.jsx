@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Carousel.css"; // Importa el archivo CSS
+import "./Carousel.css"; 
 
 function Carousel() {
   const sliderRef = useRef(null);
@@ -29,30 +29,30 @@ function Carousel() {
     {
       label: "STAR",
       imgPath:
-        "../src/assets/estrellas/amarillo.jpg",
+        "/amarillo.jpg",
 
     },
     {
       label: "STAR WALK",
       imgPath:
-        "../src/assets/estrellas/camino.jpg",
+        "/camino.jpg",
     },
    
     {
       label: "PROCYON",
       imgPath:
-        "../src/assets/estrellas/lila.png",
+        "/lila.png",
     },
     {
       label: "STAR",
       imgPath:
-        "../src/assets/estrellas/estrella.jpg",
+        "/estrella.jpg",
 
     },
     {
       label: "CONSTELACIÓN",
       imgPath:
-        "../src/assets/constelaciones/color.png",
+        "/color.png",
     },
   ];
 

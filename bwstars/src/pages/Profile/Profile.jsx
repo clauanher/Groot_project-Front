@@ -75,7 +75,7 @@ const styles = {
     profileContainer: {
        padding: '20px',
         backgroundColor: 'rgb(9, 12, 91)',
-        fontFamily: 'Arial Black, sans-serif', // Añade la fuente deseada
+        fontFamily: 'Arial Black, sans-serif', 
         color: 'white'
     },
     userContainer: {
